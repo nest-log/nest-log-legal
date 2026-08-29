@@ -28,6 +28,7 @@
   <li>With an account, your household's log syncs to our server so your partner sees the same day.</li>
   <li>We do not sell your data, and we do not share your baby's log with anyone outside your household.</li>
   <li>The free version shows ads, which are served by Google. Ads are the only part of the app that involves a third-party advertising identifier.</li>
+  <li>We collect crash reports, and — only if you have consented to ads — anonymous usage statistics. Neither ever contains anything you logged.</li>
   <li>You can delete everything, permanently, from inside the app.</li>
 </ul>
 </div>
@@ -86,6 +87,8 @@
   <tr><td><strong>Email address</strong></td><td>Only if you create an account. Used to sign you in, to recover access, and to let your partner invite you. Held by Supabase's authentication service.</td></tr>
   <tr><td><strong>Notification token</strong></td><td>If you sign in, the app registers a Firebase Cloud Messaging token so the other parent's phone can be told there is something new to fetch. The message itself carries no details of what was logged &mdash; it is a &ldquo;check now&rdquo; signal, and your phone then fetches the change over the same encrypted connection as everything else. The token is deleted with your account.</td></tr>
   <tr><td><strong>App preferences</strong></td><td>Theme, language, units, and similar. Stored on your device.</td></tr>
+  <tr><td><strong>Crash reports</strong></td><td>Stack trace, device model and OS version when the app crashes or recovers from an error. No advertising identifier, and nothing you logged.</td></tr>
+  <tr><td><strong>Usage statistics</strong></td><td>Which screens are opened and which features are used. Collected only with ads consent, and never for Pro users. Never includes the content of an entry.</td></tr>
 </table>
 </div>
 
@@ -95,7 +98,15 @@
 
 <p><strong>Google Play Billing</strong> handles the one-time Pro purchase. Google tells the app whether a purchase exists; we never see your card details, and payment is entirely between you and Google.</p>
 
-<p>These two are the only third parties that receive anything. <strong>Your baby's log is never shared with either of them</strong>, or with anyone else outside your household.</p>
+<p><strong>Firebase Crashlytics</strong> (Google) collects a crash report when the app crashes or hits an error it recovers from: the stack trace, the device model, the operating system version, and how far into the session it happened. It does not collect an advertising identifier, and it does not contain anything you logged. This is on whenever the app has crash reporting configured, because without it a crash is invisible to us &mdash; the first we would hear of it is a one-star review that cannot be acted on.</p>
+
+<p><strong>Firebase Analytics</strong> (Google) collects anonymous usage statistics: which screens are opened, how often an entry is logged, whether a feature is used at all. <strong>It is off unless you have consented to ads</strong>, it uses the same consent choice rather than asking you twice, and it is off entirely for Pro users, who are never shown that form.</p>
+
+<div class="callout">
+<p><strong>No analytics event contains anything you typed.</strong> "A feed was logged" is a statistic about the app. The volume, the side, the time, the note, and your baby's name are yours, and they stay in your own database. That line is enforced in one place in the code, so it cannot erode one convenient parameter at a time.</p>
+</div>
+
+<p>These four Google services are the only third parties that receive anything. <strong>Your baby's log is never shared with any of them</strong>, or with anyone else outside your household.</p>
 
 <h2>Sharing with your partner</h2>
 
