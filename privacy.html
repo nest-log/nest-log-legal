@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Nestlog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="brand" href="./">Nestlog</a>
+  <div class="tag">Baby tracker for two parents</div>
+</header>
+
+<h1>Privacy Policy</h1>
+<p class="dates"><strong>Effective:</strong> 29 August 2026 &middot; <strong>Last updated:</strong> 29 August 2026</p>
+
+<p class="lede">Nestlog is a baby tracker. You log feeds, sleep, nappy changes and growth for your baby, and if you choose to, share that log with one other parent. This page explains exactly what is stored, where it goes, and how to get rid of it.</p>
+
+<h2>The short version</h2>
+
+<div class="card">
+<ul>
+  <li>The app works fully offline. <strong>You do not need an account.</strong></li>
+  <li>Without an account, nothing you log ever leaves your phone.</li>
+  <li>With an account, your household's log syncs to our server so your partner sees the same day.</li>
+  <li>We do not sell your data, and we do not share your baby's log with anyone outside your household.</li>
+  <li>The free version shows ads, which are served by Google. Ads are the only part of the app that involves a third-party advertising identifier.</li>
+  <li>You can delete everything, permanently, from inside the app.</li>
+</ul>
+</div>
+
+<h2>Who we are</h2>
+
+<p>Nestlog is an independent app. For anything in this policy, including privacy requests, contact <a href="mailto:nestlog7@gmail.com">nestlog7@gmail.com</a>.</p>
+
+<h2>Where your data lives</h2>
+
+<h3>On your phone</h3>
+
+<p>Everything you log is written to a database on your device, and that copy is the source of truth. It is why the app works on a plane, in a lift, or with no signal at 3am. Your device's operating system encrypts this storage at the file level; the app does not add its own encryption layer on top.</p>
+
+<h3>On our server</h3>
+
+<p>If you create an account, your household's data also syncs to a server we run on <strong>Supabase</strong> (a hosted PostgreSQL platform). Everything in transit is encrypted over HTTPS. Access is enforced by row-level security in the database, which means a query can only return rows belonging to a household you are a member of &mdash; not merely that the app avoids asking for other rows.</p>
+
+<h2>You do not need an account</h2>
+
+<p>The app is fully usable signed out. Create an account only if you want to:</p>
+
+<ul>
+  <li>share the log with your partner in real time, or</li>
+  <li>keep a backup that survives losing the phone.</li>
+</ul>
+
+<p>If you sign out, the app keeps working and your local log stays on the phone.</p>
+
+<h2>What we collect</h2>
+
+<h3>What you type in</h3>
+
+<div class="table-scroll">
+<table>
+  <tr><th>Data</th><th>Notes</th></tr>
+  <tr><td><strong>Baby's name</strong></td><td>Required to create a baby.</td></tr>
+  <tr><td><strong>Date of birth</strong></td><td>Optional. Used for the age shown on Home and for growth charts.</td></tr>
+  <tr><td><strong>Sex</strong></td><td>Optional &mdash; male, female, or unspecified.</td></tr>
+  <tr><td><strong>Feeds</strong></td><td>Time, method (breast, bottle or solids), side, volume, food description.</td></tr>
+  <tr><td><strong>Sleep</strong></td><td>Start and end times.</td></tr>
+  <tr><td><strong>Nappy changes</strong></td><td>Time and kind (wet, dirty, both).</td></tr>
+  <tr><td><strong>Growth</strong></td><td>Weight, height and head circumference, with the date measured.</td></tr>
+  <tr><td><strong>Pumping, medicine, temperature, notes</strong></td><td>Time, plus the amount, dose, reading or text you enter.</td></tr>
+  <tr><td><strong>Household name</strong></td><td>Only if you create or rename one.</td></tr>
+</table>
+</div>
+
+<p><strong>There is no way to attach a photo of your baby in the app, and we never ask for one.</strong> We also do not ask for your own name, your address, your phone number, or your baby's medical records.</p>
+
+<h3>What the app collects to work</h3>
+
+<div class="table-scroll">
+<table>
+  <tr><th>Data</th><th>Why</th></tr>
+  <tr><td><strong>Email address</strong></td><td>Only if you create an account. Used to sign you in, to recover access, and to let your partner invite you. Held by Supabase's authentication service.</td></tr>
+  <tr><td><strong>Notification token</strong></td><td>If you sign in, the app registers a Firebase Cloud Messaging token so the other parent's phone can be told there is something new to fetch. The message itself carries no details of what was logged &mdash; it is a &ldquo;check now&rdquo; signal, and your phone then fetches the change over the same encrypted connection as everything else. The token is deleted with your account.</td></tr>
+  <tr><td><strong>App preferences</strong></td><td>Theme, language, units, and similar. Stored on your device.</td></tr>
+</table>
+</div>
+
+<h3>What third parties collect</h3>
+
+<p><strong>Google AdMob</strong> serves ads in the free version. The Google Mobile Ads SDK collects your device's advertising identifier and standard ad-request information. In regions where consent is required, the app shows Google's consent form before any ad request is made, and you can change that choice later in Settings. <strong>Pro users see no ads at all</strong>, so no advertising identifier is collected from them.</p>
+
+<p><strong>Google Play Billing</strong> handles the one-time Pro purchase. Google tells the app whether a purchase exists; we never see your card details, and payment is entirely between you and Google.</p>
+
+<p>These two are the only third parties that receive anything. <strong>Your baby's log is never shared with either of them</strong>, or with anyone else outside your household.</p>
+
+<h2>Sharing with your partner</h2>
+
+<p>If you invite a second parent, they see the full log for the babies in your household: every entry, who logged it, and when. That is the point of the feature. Sharing happens only through our server &mdash; there is no peer-to-peer or local-network path, and every byte that leaves your phone goes to Supabase over HTTPS.</p>
+
+<p>Either parent can leave the household at any time from Settings.</p>
+
+<h2>How long we keep it</h2>
+
+<ul>
+  <li><strong>On your phone:</strong> until you delete the entry or the account.</li>
+  <li><strong>On our server:</strong> until you delete your account. There is no automatic expiry.</li>
+</ul>
+
+<p>Deleting an individual entry hides it immediately everywhere and marks it as deleted so the deletion reaches your partner's phone too. Deleting your account is what removes data outright.</p>
+
+<h2>Deleting your data</h2>
+
+<p>In the app: <strong>Settings &rarr; Delete account</strong>. This removes your account and your data from our server permanently, and it cannot be undone.</p>
+
+<p>If you cannot get into the app, see <a href="delete-account.html">the deletion page</a>.</p>
+
+<div class="callout">
+<p><strong>One thing worth knowing before you delete.</strong> If your household has a second parent, the household and its entries survive so their copy is not destroyed along with yours. Your membership is removed and the entries you logged stop being attributed to you. If you are the only member, everything goes.</p>
+</div>
+
+<p>Your Pro unlock belongs to your Google Play account rather than to your Nestlog account, so deleting your Nestlog account does not cost you the purchase.</p>
+
+<h2>Children's privacy</h2>
+
+<p>Nestlog is for parents and carers, not for children. We do not knowingly collect data from anyone under 13.</p>
+
+<p>The app does hold information <em>about</em> an infant, entered by their parent. That is the entire purpose of a baby tracker, and it is why the log is never shared outside your household and never sent to advertisers.</p>
+
+<h2>This is not medical advice</h2>
+
+<p>Nestlog records what you tell it and shows you the pattern. It does not diagnose, advise or interpret. Growth charts plot the measurements you enter; they are not a clinical assessment. If you are worried about your baby, speak to a doctor or health visitor.</p>
+
+<h2>Your rights</h2>
+
+<p>Depending on where you live, you may have the right to access, correct, export or erase your data, and to object to certain processing.</p>
+
+<ul>
+  <li><strong>Access and correction:</strong> everything is visible and editable in the app.</li>
+  <li><strong>Export:</strong> Settings &rarr; Export as CSV gives you every entry as a spreadsheet, free, with no account needed.</li>
+  <li><strong>Erasure:</strong> Settings &rarr; Delete account, or the <a href="delete-account.html">deletion page</a>.</li>
+</ul>
+
+<p>For anything else, email <a href="mailto:nestlog7@gmail.com">nestlog7@gmail.com</a>.</p>
+
+<h2>International transfers</h2>
+
+<p>Our Supabase project is hosted in the European Union. If you use the app elsewhere, your data is transferred there and stored under that jurisdiction's protections.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If we change this policy we will update the date at the top. Material changes &mdash; anything that widens what we collect or who receives it &mdash; will also be announced in the app before they take effect.</p>
+
+<h2>Contact</h2>
+
+<p><a href="mailto:nestlog7@gmail.com">nestlog7@gmail.com</a></p>
+
+<footer class="site">
+  <p><a href="./">Home</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="delete-account.html">Delete your account</a></p>
+</footer>
+
+</div>
+</body>
+</html>
